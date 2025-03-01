@@ -2,15 +2,16 @@
 
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { NavbarFilmProps } from "./NavbarFilm.type";
 
-export  function NavbarFilm(props: NavbarFilmProps) {
-    const { titleMovie } = props;
-    const router = useRouter();
-  
-    const backToHome = () => {
-      router.push("/");
-    };
+import { NavbarFilmProps } from "./NavbarFilm.types";
+
+export function NavbarFilm(props: NavbarFilmProps) {
+  const { titleMovie } = props;
+  const router = useRouter();
+
+  const backToHome = () => {
+    router.push("/");
+  };
 
   return (
     <nav
@@ -22,5 +23,5 @@ export  function NavbarFilm(props: NavbarFilmProps) {
         Estás viendo: <span className="font-bold">{titleMovie}</span>
       </p>
     </nav>
-  )
+  );
 }

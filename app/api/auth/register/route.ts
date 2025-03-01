@@ -1,5 +1,5 @@
 
-import bcrypt from 'bcryptjs';
+
 import { NextResponse } from 'next/server';
 import {db} from '@/lib/db';
 import { getUserByEmail } from '@/app/data/user';
@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     console.log({ email });
     
     try {
-        const hashedPassword = await bcrypt.hash(password, 10);
+        
         
         //TODO: Consulta si existe un usuario con el email
         const existingUser = await getUserByEmail(email);
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
         const userCreated = await db.user.create({
             data: {
                 email: email,
-                password: hashedPassword
+                password: password
                 
             }
         });
@@ -32,7 +32,3 @@ export async function POST(request: Request) {
     }
     
 }
-
-export const config = {
-    runtime: "nodejs", // ✅ Forza Node.js Runtime
-  };

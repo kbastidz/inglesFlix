@@ -1,7 +1,7 @@
 
 import type { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import bcryptjs from "bcryptjs";
+
 import { signInSchema } from "./lib/zod";
 import { getUserByEmail } from "./app/data/user";
 
@@ -21,13 +21,11 @@ export default {
   
             if (!user || !user.password) return null;
   
-            const passwordsMatch = await bcryptjs.compare(
-              password,
-              user.password
-            );
-            if (passwordsMatch) {
+           
+            if(password === user.password){ 
               return user;
             }
+            
           }
           return null;
         },
@@ -37,6 +35,3 @@ export default {
 
 //Valida si el email que se le esta pasando cumple con las validaciones requeridas en la clase zod
 
-export const config = {
-  runtime: "nodejs", // ✅ Forza Node.js Runtime
-};

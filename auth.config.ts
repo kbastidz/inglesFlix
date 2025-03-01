@@ -1,5 +1,3 @@
-export const runtime = "nodejs"; // Asegura que Next.js use Node.js y no Edge
-
 import type { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import bcryptjs from "bcryptjs";
@@ -37,3 +35,7 @@ export default {
   } satisfies NextAuthConfig;
 
 //Valida si el email que se le esta pasando cumple con las validaciones requeridas en la clase zod
+
+export const config = {
+  runtime: "nodejs", // Forza Node.js Runtime
+};

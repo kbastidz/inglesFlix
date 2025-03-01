@@ -18,7 +18,7 @@ export function RegisterForm() {
     defaultValues: {
       email: "",
       password: "",
-      repeatPassword: "",
+      repeatPassword: ""
     },
   });
   
@@ -40,61 +40,61 @@ export function RegisterForm() {
 
   return (
     <Form {...form}>
-    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-      <FormField
-        control={form.control}
-        name="email"
-        render={({ field }) => (
-          <FormItem>
-            <FormControl>
-              <Input
-                placeholder="Correo electrónico"
-                {...field}
-                className="h-14"
-              />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <FormField
-        control={form.control}
-        name="password"
-        render={({ field }) => (
-          <FormItem>
-            <FormControl>
-              <Input
-                placeholder="Contraseña"
-                {...field}
-                className="h-14"
-                type="password"
-              />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <FormField
-        control={form.control}
-        name="repeatPassword"
-        render={({ field }) => (
-          <FormItem>
-            <FormControl>
-              <Input
-                placeholder="Repite la contraseña"
-                {...field}
-                className="h-14"
-                type="password"
-              />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <Button type="submit" className="w-full bg-[#E50914]">
-        Registrarse
-      </Button>
-    </form>
-  </Form>
-);
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  placeholder="Correo electrónico"
+                  {...field}
+                  className="h-14"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  placeholder="Contraseña"
+                  {...field}
+                  className="h-14"
+                  type="password"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="repeatPassword"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  placeholder="Repite la contraseña"
+                  {...field}
+                  className="h-14"
+                  type="password"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" className="w-full bg-[#E50914]">
+          Registrarse
+        </Button>
+      </form>
+    </Form>
+  )
 }

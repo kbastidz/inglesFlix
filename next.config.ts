@@ -1,5 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  experimental: {
+    serverComponentsExternalPackages: ["bcryptjs"],
+  },
   images: {
     remotePatterns: [
       {
@@ -9,7 +13,8 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-  },
+  }
 };
 
 export default nextConfig;
+module.exports = nextConfig;

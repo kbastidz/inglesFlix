@@ -1,10 +1,7 @@
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-
-import { NavbarFilm } from "./components/NavbarFilm";
-import { MovieVideo } from "./components/MovieVideo";
-
-
+import { NavbarFilm } from "./compoments/NavbarFilm";
+import { MovieVideo } from "./compoments/MovieVideo";
 
   export type paramsType = Promise<{ movieId: string }>;
 

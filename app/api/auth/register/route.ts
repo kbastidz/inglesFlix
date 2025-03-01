@@ -1,3 +1,5 @@
+export const runtime = "nodejs"; // Asegura que Next.js use Node.js y no Edge
+
 import bcrypt from 'bcryptjs';
 import { NextResponse } from 'next/server';
 import {db} from '@/lib/db';

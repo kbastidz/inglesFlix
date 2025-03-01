@@ -1,21 +1,16 @@
+import Link from "next/link";
 
 import { Checkbox } from "@/components/ui/checkbox";
-import Link from "next/link";
-import { Terms } from "../compoments/Terms";
-import { LoginForm } from "./LoginForm";
-import { auth} from "@/auth";
-export default async function LoginPage() {
-  const session = await auth();
-  console.log("hola");
-  console.log(session);
 
+import { Terms } from "../components/Terms";
+import { LoginForm } from "./LoginForm";
+
+export default async function LoginPage() {
   return (
     <div>
       <p className="text-3xl font-bold text-left mb-7">Iniciar sesión</p>
-      
-      <p>Session: {JSON.stringify(session)}</p>
-      <LoginForm/>      
-        
+
+      <LoginForm />
       <div className="mt-5 text-center">
         <Link href="/" className="hover:underline hover:opacity-70">
           ¿Has olvidado tu contraseña?

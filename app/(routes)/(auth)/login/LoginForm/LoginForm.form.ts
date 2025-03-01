@@ -7,5 +7,4 @@ export const formSchema = z.object({
   password: z.string().min(2, {
     message: "Password is too short",
   }),
-  repeatPassword: z.string()
 });

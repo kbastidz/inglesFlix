@@ -1,14 +1,23 @@
 "use client";
-import { Button } from '@/components/ui/button'
-import { FormField, FormItem, FormControl, FormMessage, Form } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod';
-import { formSchema } from '../../login/LoginForm/LoginForm.form';
-import { useForm } from 'react-hook-form';
-import axios from 'axios';
-import { toast } from 'sonner';
-import { useRouter } from 'next/navigation';
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import axios from "axios";
+
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { formSchema } from "./RegisterForm.form";
+
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export function RegisterForm() {
   const router = useRouter();
@@ -18,17 +27,16 @@ export function RegisterForm() {
     defaultValues: {
       email: "",
       password: "",
-      repeatPassword: ""
+      repeatPassword: "",
     },
   });
-  
+
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
     try {
-      //TODO: Envia la peticion
-      await axios.post("/api/auth/register", values); 
-      toast("El usuario se ah creado correctamente");
-      router.push("/profiles")
+      await axios.post("/api/auth/register", values);
+
+      toast("El usuario se ha registrado correctamente",);
+      router.push("/profiles");
     } catch (error) {
       console.log(error);
       toast("Ha ocurrido un error", {
@@ -36,7 +44,7 @@ export function RegisterForm() {
         style: { backgroundColor: "rgb(229 9 20 / var(--tw-bg-opacity, 1))", color: "white" },
       });
     }
-  }
+  };
 
   return (
     <Form {...form}>
@@ -96,5 +104,5 @@ export function RegisterForm() {
         </Button>
       </form>
     </Form>
-  )
+  );
 }

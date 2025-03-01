@@ -17,6 +17,7 @@ import { formSchema } from "./LoginForm.form";
 import { useState } from "react";
 import { FormError } from "./FormError";
 import { login } from "@/actions/login";
+
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
@@ -38,7 +39,7 @@ export function LoginForm() {
       login(values).then((data) => {
         setError(data?.error);
         if (data?.success) {
-          toast("Login se ha realizado con éxito");
+          toast( "Login se ha realizado con éxito");
         }
       });
       router.push("/profiles");

@@ -1,7 +1,7 @@
-import React from 'react'
 import Link from "next/link";
+
 import { RegisterForm } from "./RegisterForm";
-import { Terms } from '@/app/(routes)/(auth)/compoments/Terms';
+import { Terms } from "../components/Terms";
 
 export default function RegisterPage() {
   return (

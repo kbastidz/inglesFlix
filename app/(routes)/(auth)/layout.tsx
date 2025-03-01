@@ -21,5 +21,3 @@ export default function AuthLayout({
     </div>
   );
 }
-
-//children Me permite cargar lo que esta en login/page
